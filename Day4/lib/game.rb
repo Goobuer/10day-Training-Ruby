@@ -34,6 +34,7 @@ class Game
             end
         end
 
+    end
 
     private
 
@@ -60,7 +61,6 @@ class Game
     end
 
 end
-
 
 
 
