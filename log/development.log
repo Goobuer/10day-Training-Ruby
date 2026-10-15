@@ -1,0 +1,96 @@
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY) /*application='MyFirstRailsApp'*/[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MyFirstRailsApp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = 'environment' ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1 /*application='MyFirstRailsApp'*/[0m
+  [1m[36mActiveRecord::InternalMetadata Create (0.6ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2026-10-15 09:06:19.051512', '2026-10-15 09:06:19.051522') RETURNING "key" /*application='MyFirstRailsApp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MyFirstRailsApp'*/[0m
+Migrating to CreateCars (20261015090557)
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*application='MyFirstRailsApp'*/[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE "cars" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "make" varchar, "model" varchar, "year" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL) /*application='MyFirstRailsApp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20261015090557') RETURNING "version" /*application='MyFirstRailsApp'*/[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT TRANSACTION /*application='MyFirstRailsApp'*/[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MyFirstRailsApp'*/[0m
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+Started GET "/cars" for ::1 at 2026-10-15 09:06:40 +0000
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC /*application='MyFirstRailsApp'*/[0m
+Processing by CarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (3.9ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /*action='index',application='MyFirstRailsApp',controller='cars'*/[0m
+  ↳ app/views/cars/index.html.erb:9
+  Rendered cars/index.html.erb within layouts/application (Duration: 17.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 37.4ms | GC: 0.0ms)
+Completed 200 OK in 155ms (Views: 43.0ms | ActiveRecord: 5.5ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/cars/new" for ::1 at 2026-10-15 09:06:57 +0000
+Processing by CarsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cars/new.html.erb within layouts/application
+  Rendered cars/_form.html.erb (Duration: 31.9ms | GC: 0.0ms)
+  Rendered cars/new.html.erb within layouts/application (Duration: 33.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 35.6ms | GC: 0.0ms)
+Completed 200 OK in 60ms (Views: 40.4ms | ActiveRecord: 1.3ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/cars" for ::1 at 2026-10-15 09:07:28 +0000
+Processing by CarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /*action='index',application='MyFirstRailsApp',controller='cars'*/[0m
+  ↳ app/views/cars/index.html.erb:9
+  Rendered cars/index.html.erb within layouts/application (Duration: 4.5ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.3ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started POST "/cars" for ::1 at 2026-10-15 09:07:30 +0000
+Processing by CarsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token" => "[FILTERED]", "car" => {"make" => "porchse", "model" => "hta34", "year" => "2026"}, "commit" => "Create Car"}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN immediate TRANSACTION /*action='create',application='MyFirstRailsApp',controller='cars'*/[0m
+  ↳ app/controllers/cars_controller.rb:27:in 'block in CarsController#create'
+  [1m[36mCar Create (3.3ms)[0m  [1m[32mINSERT INTO "cars" ("make", "model", "year", "created_at", "updated_at") VALUES ('porchse', 'hta34', 2026, '2026-10-15 09:07:30.934837', '2026-10-15 09:07:30.934837') RETURNING "id" /*action='create',application='MyFirstRailsApp',controller='cars'*/[0m
+  ↳ app/controllers/cars_controller.rb:27:in 'block in CarsController#create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT TRANSACTION /*action='create',application='MyFirstRailsApp',controller='cars'*/[0m
+  ↳ app/controllers/cars_controller.rb:27:in 'block in CarsController#create'
+Redirected to http://localhost:3000/cars/1
+↳ app/controllers/cars_controller.rb:28:in 'block (2 levels) in CarsController#create'
+Completed 302 Found in 28ms (ActiveRecord: 3.9ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/cars/1" for ::1 at 2026-10-15 09:07:30 +0000
+Processing by CarsController#show as TURBO_STREAM
+  Parameters: {"id" => "1"}
+  [1m[36mCar Load (0.3ms)[0m  [1m[34mSELECT "cars".* FROM "cars" WHERE "cars"."id" = 1 LIMIT 1 /*action='show',application='MyFirstRailsApp',controller='cars'*/[0m
+  ↳ app/controllers/cars_controller.rb:63:in 'CarsController#set_car'
+  Rendering layout layouts/application.html.erb
+  Rendering cars/show.html.erb within layouts/application
+  Rendered cars/_car.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered cars/show.html.erb within layouts/application (Duration: 16.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 19.0ms | GC: 0.0ms)
+Completed 200 OK in 35ms (Views: 21.4ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/cars" for ::1 at 2026-10-15 09:07:34 +0000
+Processing by CarsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering cars/index.html.erb within layouts/application
+  [1m[36mCar Load (0.6ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /*action='index',application='MyFirstRailsApp',controller='cars'*/[0m
+  ↳ app/views/cars/index.html.erb:9
+  Rendered cars/_car.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered cars/index.html.erb within layouts/application (Duration: 8.9ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 10.7ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 14.1ms | ActiveRecord: 0.6ms (1 query, 0 cached) | GC: 0.0ms)
+
+
+Using vips to process variants requires the libvips library. Please install libvips using the instructions on the libvips website.
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN deferred TRANSACTION /*application='MyFirstRailsApp'*/[0m
+  [1m[36mCar Load (6.1ms)[0m  [1m[34mSELECT "cars".* FROM "cars" /* loading for pp */ LIMIT 11 /*application='MyFirstRailsApp'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1 /*application='MyFirstRailsApp'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_2 /*application='MyFirstRailsApp'*/[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_3 /*application='MyFirstRailsApp'*/[0m
