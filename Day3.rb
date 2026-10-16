@@ -106,7 +106,7 @@ loop do
 #if it is YES, then this is where those borrowers over $1000 payment will be stored to be printed
             redflag_borrowers = loans.select do |borrower_name, borrower_amount|
                 total_payment = borrower_amount.reduce(0) { |sum, x| sum + x[:amount] }
-                total > 1000
+                total_payment > 1000
             end
 
             unless redflag_borrowers.empty?
